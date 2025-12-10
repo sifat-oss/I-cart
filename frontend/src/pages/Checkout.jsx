@@ -56,15 +56,17 @@ const Checkout = () => {
   return (
     <AnimatedWrapper>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-4xl font-bold text-gray-800 mb-8">Checkout</h1>
+        <h1 className="text-4xl font-bold gradient-text mb-8">Secure Checkout</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Checkout Form */}
           <div className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Shipping Information */}
-              <div className="card p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Shipping Information</h2>
+              <div className="glass p-8 rounded-3xl border-2 border-purple-100">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                  Shipping Information
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-gray-700 font-semibold mb-2">
@@ -75,7 +77,7 @@ const Checkout = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                       required
                     />
                   </div>
@@ -88,7 +90,7 @@ const Checkout = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                       required
                     />
                   </div>
@@ -101,7 +103,7 @@ const Checkout = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                       required
                     />
                   </div>
@@ -114,7 +116,7 @@ const Checkout = () => {
                       name="city"
                       value={formData.city}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                       required
                     />
                   </div>
@@ -126,7 +128,7 @@ const Checkout = () => {
                       name="address"
                       value={formData.address}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                       rows="3"
                       required
                     />
@@ -140,39 +142,41 @@ const Checkout = () => {
                       name="postalCode"
                       value={formData.postalCode}
                       onChange={handleChange}
-                      className="input-field"
+                      className="w-full px-4 py-3 rounded-xl border-2 border-purple-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all bg-white/50"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Payment Method */}
-              <div className="card p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Payment Method</h2>
-                <div className="space-y-3">
-                  <label className="flex items-center space-x-3 cursor-pointer">
+              <div className="glass p-8 rounded-3xl border-2 border-pink-100">
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent mb-6">
+                  Payment Method
+                </h2>
+                <div className="space-y-4">
+                  <label className="flex items-center space-x-4 p-4 rounded-xl border-2 border-purple-200 hover:border-purple-400 cursor-pointer transition-all bg-white/30">
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="cash"
                       checked={formData.paymentMethod === 'cash'}
                       onChange={handleChange}
-                      className="form-radio text-primary-green-600"
+                      className="w-5 h-5 text-purple-600"
                     />
-                    <FiDollarSign className="text-primary-green-600" size={24} />
-                    <span className="text-gray-700">Cash on Delivery</span>
+                    <FiDollarSign className="text-purple-600" size={28} />
+                    <span className="text-gray-800 font-semibold">Cash on Delivery</span>
                   </label>
-                  <label className="flex items-center space-x-3 cursor-pointer">
+                  <label className="flex items-center space-x-4 p-4 rounded-xl border-2 border-pink-200 hover:border-pink-400 cursor-pointer transition-all bg-white/30">
                     <input
                       type="radio"
                       name="paymentMethod"
                       value="card"
                       checked={formData.paymentMethod === 'card'}
                       onChange={handleChange}
-                      className="form-radio text-primary-green-600"
+                      className="w-5 h-5 text-pink-600"
                     />
-                    <FiCreditCard className="text-primary-blue-600" size={24} />
-                    <span className="text-gray-700">Credit/Debit Card</span>
+                    <FiCreditCard className="text-pink-600" size={28} />
+                    <span className="text-gray-800 font-semibold">Credit/Debit Card</span>
                   </label>
                 </div>
               </div>
@@ -182,9 +186,9 @@ const Checkout = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full btn-primary text-lg py-4"
+                className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white px-8 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:shadow-purple-500/50 transition-all"
               >
-                Place Order
+                🛒 Place Order Securely
               </motion.button>
             </form>
           </div>
@@ -194,7 +198,7 @@ const Checkout = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="card p-6 sticky top-24"
+              className="glass p-8 rounded-3xl border-2 border-indigo-100 sticky top-24"
             >
               <h2 className="text-2xl font-bold text-gray-800 mb-4">Order Summary</h2>
 
